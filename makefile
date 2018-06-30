@@ -1,11 +1,11 @@
 CC     = clang++
-CFLAGS = -Wall -pedantic -std =c++17
-LFLAGS =
+CFLAGS = -Wall -Wextra -pedantic-errors -std=c++17
+LFLAGS = -lstdc++fs
 SRCDIR = ./src
 BINDIR = ./bin
 OBJS   = $(SRCDIR)/*.cpp
-Name   = my_tree
+NAME   = my_tree
 
 default: $(OBJS)
-	$(CC) $(CFLAGS) $(LFLAGS) $^ -o $(BINDIR)/$(NAME)
+	$(CC) $^ $(CFLAGS) $(LFLAGS) -o $(BINDIR)/$(NAME)
 
